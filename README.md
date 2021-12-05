@@ -38,3 +38,9 @@ C2 = Red ring + orange fill
 User input = [A3, E1, C2]
 Visual output = (Navy ring + red fill); (Yellow ring + green fill); (Red ring + orange fill) 
 
+Future functionality:
+Generate score and play sounds in sequence.
+Displaying the fretnumbers as well
+Ajustable design for rings, fills and colours.
+Symbols for 2 strings at the same time
+Symbols for chords 
