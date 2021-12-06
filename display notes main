@@ -5,11 +5,19 @@ Input = [A0, E1, C2, G0];
 DiameterOut = 15;
 DiameterIn = 10;
 
+//initial position where first note will be drawn
+Xposition = 30;    
+Yposition = 30;    
+
 Display(char Notes){
   for(i = 0; i < size(Notes); i++){
-    Letter = first(Notes[i]);
-    Fret = stringtoint(last(Notes[i]));
+    Letter = first(Notes[i]);               //get ukulele string letter
+    Fret = stringtoint(last(Notes[i]));     //get fretnumber
     Drawring(DiameterOut, DiameterIn, Letter, Fret)
+    Xposition += 20;              //move the point where the next note will be drawn
+    if (Xposition > screensize){
+      Yposition += 30;
+      Xposition = 30;
     }
   }
   
@@ -38,8 +46,8 @@ Drawring(DiameterOut, DiameterIn, Letter, Fret){
     }
   } 
   Draw ring(DiamterOUt, DiameterIn, ringcolour, fillcolour){
-      circle(DiameterOut,ringcolour);
-      circle(DiameterIn, fillcolour);
+      circle(DiameterOut, ringcolour, Xpoition, Yposition);
+      circle(DiameterIn, fillcolour, Xpoition, Yposition);
     } 
   }
 
