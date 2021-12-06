@@ -1,0 +1,26 @@
+//Example input: 4 notes, letters indicate the string of ukulele, number is the fretnumber
+Input = [A0, E1, C2, G0];
+
+//Design of ring notation
+DiameterOut = 15;
+DiameterIn = 10;
+
+Display(char Notes){
+  for(i = 0; i < size(Notes); i++){
+    Letter = first(Notes[i]);
+    Fret = stringtoint(last(Notes[i]));
+    Drawring(DiameterOut, DiameterIn, Letter, Fret)
+}
+
+Drawring(DiameterOut, DiameterIn, Letter, Fret){
+  Letter case A{
+    ringcolour = [0, 0, 255]; // Navy
+    }
+  Letter case B{
+    ringcolour = [0, 50, 255]; // Pink
+    }
+  Draw ring(DiamterOUt, DiameterIn,
+}
+
+Main
+  Display(Input)
