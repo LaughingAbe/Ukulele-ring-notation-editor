@@ -10,17 +10,38 @@ Display(char Notes){
     Letter = first(Notes[i]);
     Fret = stringtoint(last(Notes[i]));
     Drawring(DiameterOut, DiameterIn, Letter, Fret)
-}
+    }
+  }
+  
+Fretcolours = [White, Black, Pink, Red, Black, Orange, Black, Yellow, Green, Lightblue, Black, Navy;
+               White, Green, Lightblue, Black, Navy, Black, Pink, Red, Black, Orange, Black, Yellow;
+               White, Black, Orange, Black, Yellow, Green, Lightblue, Black, Navy, Black, Pink, Red;
+               White, Black, Navy, Black, Pink, Red, Black, Orange, Black, YellowYellow, Green, Lightblue];  
 
 Drawring(DiameterOut, DiameterIn, Letter, Fret){
-  Letter case A{
-    ringcolour = [0, 0, 255]; // Navy
+  for Letter 
+    case A{
+      ringcolour = [0, 0, 255]; // Navy
+      fillcolour = Fretcolours[1,Fret];
     }
-  Letter case B{
-    ringcolour = [0, 50, 255]; // Pink
+    case E{
+      ringcolour = [0, 50, 255]; // Yellow
+      fillcolour = Fretcolours[2,Fret];
     }
-  Draw ring(DiamterOUt, DiameterIn,
-}
+    case C{
+      ringcolour = [255, 0, 255]; // Red
+      fillcolour = Fretcolours[3,Fret];
+    }
+    case G{
+      ringcolour = [155, 50, 255]; // Light blue
+      fillcolour = Fretcolours[4,Fret];
+    }
+  } 
+  Draw ring(DiamterOUt, DiameterIn, ringcolour, fillcolour){
+      circle(DiameterOut,ringcolour);
+      circle(DiameterIn, fillcolour);
+    } 
+  }
 
 Main
   Display(Input)
