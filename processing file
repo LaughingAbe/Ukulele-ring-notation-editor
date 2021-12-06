@@ -1,0 +1,60 @@
+void setup() {
+  size(640, 360);
+}
+
+//Example input: 4 notes, letters indicate the string of ukulele, number is the fretnumber
+String[] input = {"A0", "E1", "C2", "G0"};
+
+//Design of ring notation
+int DiameterOut = 15;
+int DiameterIn = 10;
+
+//initial position where first note will be drawn
+int Xposition = 30;    
+int Yposition = 30;
+
+int[] ringcolour = {0, 0, 0};
+int[] fillcolour = {0, 0, 0};
+
+String[] Fretcolours = {"White", "Black", "Pink", "Red", "Black", "Orange", "Black", "Yellow", "Green", "Lightblue", "Black", "Navy",
+               "White", "Green", "Lightblue", "Black", "Navy", "Black", "Pink", "Red", "Black", "Orange", "Black", "Yellow",
+               "White", "Black", "Orange", "Black", "Yellow", "Green", "Lightblue", "Black", "Navy", "Black", "Pink", "Red",
+               "White", "Black", "Navy", "Black", "Pink", "Red", "Black", "Orange", "Black", "Yellow", "Green", "Lightblue"};  
+
+void draw() {
+  background(102);
+  fill(255);
+  ellipse(252, 144, 72, 72);
+  Xposition = 30;
+  Yposition = 30;
+
+  for(int i = 0; i < 4; i++){
+    char Letter = input[i].charAt(0);               //get ukulele string letter
+    println(Letter);
+    int Fret = int(input[i].charAt(1));     //get fretnumber
+    println(Fret);
+    switch(Letter){ 
+    case 'A':
+      int[] ringcolour = {0, 0, 255}; // Navy
+      String fillcolour = Fretcolours[0][Fret];
+    case 'E':
+      int[] ringcolour = {0, 50, 255}; // Yellow
+      fillcolour = Fretcolours[1][Fret];
+    case 'C':
+      int[] ringcolour = {255, 0, 255}; // Red
+      fillcolour = Fretcolours[2][Fret];
+    case 'G':
+      int[] ringcolour = {155, 50, 255}; // Light blue
+      fillcolour = Fretcolours[3][Fret];
+    }
+  }
+    
+    fill(55,22,222);
+    ellipse(Xposition, Yposition, DiameterOut, DiameterOut);
+    Xposition += 20;              //move the point where the next note will be drawn
+    if (Xposition < 1000){
+      Yposition += 30;
+    }
+  save("Ring1.png");
+  }
+
