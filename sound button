@@ -1,3 +1,6 @@
+//I'm trying to create a button that will play a sound file when I click on it
+//It would be great to use this interactive feature for songs displayed on a screen
+
 package com.example.soundbutton
 
 import android.media.MediaPlayer
